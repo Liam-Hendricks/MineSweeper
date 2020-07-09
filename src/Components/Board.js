@@ -245,7 +245,7 @@ class Board extends React.Component {
       board: updatedData,
     });
   }
-  
+
   //function for returning array of cells that are mines
   getFlags(data) {
     let mineArray = [];
@@ -290,11 +290,13 @@ class Board extends React.Component {
   //function for mapping the board
   createBoard() {
     const { rows, cols } = this.props;
+    //made empty 2D array first using rows and cols value
     let array = this.make2Darray(rows, cols);
+    // get the current 2D array board.Set the create cell components in array using cell object data
     let grid = this.state.board;
     for (let i = 0; i < cols; i++) {
       for (let j = 0; j < rows; j++) {
-        array[i][j] = (
+        array[i][j] = ( 
           <Cell
             data={grid[i][j]}
             key={grid[i][j].x * rows + grid[i][j].y}
@@ -303,6 +305,7 @@ class Board extends React.Component {
         );
       }
     }
+    //map the cell compnents to the rows 
     let mapper = array.map((row, index1) => {
       let mapper2 = row.map((cell) => {return cell;});
       return (
@@ -311,6 +314,7 @@ class Board extends React.Component {
         </Row>
       );
     });
+    //return board to be rendered
     return mapper;
   }
 

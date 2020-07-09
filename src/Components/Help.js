@@ -32,7 +32,7 @@ export default class Help extends Component {
                 touching a mine.
               </p>
               <p>
-                When you click on a square a block may have a number,bomb,flag
+                When you click on a block it may have a number,bomb,flag
                 or blank.
               </p>
               <h3>Flag</h3>
@@ -58,6 +58,10 @@ export default class Help extends Component {
                   surround it in a one block radius.
                 </li>
                 <img src={Image} alt="" />
+                <li>
+                  Use this knowledege to figure out which blocks are safe and which are not.
+                </li>
+                
               </ul>
             </Card.Text>
           </Row>
